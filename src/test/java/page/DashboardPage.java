@@ -27,7 +27,7 @@ public class DashboardPage {
     }
 
     public MoneyTransfer secondCardButton() {
-        firstCardButton.click();
+        secondCardButton.click();
         return new MoneyTransfer();
     }
 
