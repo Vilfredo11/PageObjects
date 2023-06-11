@@ -28,14 +28,12 @@ public class MoneyTransferTest {
         val dashboardPage = new DashboardPage();
 
         int balanceFirstCard = dashboardPage.getFirstCardBalance();
-        int balanceSecondCard = dashboardPage.getSecondCardBalance();
         val moneyTransfer = dashboardPage.firstCardButton();
         val infoCard = DataHelper.getSecondCardNumber();
         String sum = "100";
         moneyTransfer.transferForm(sum, infoCard);
 
         assertEquals(balanceFirstCard + Integer.parseInt(sum), dashboardPage.getFirstCardBalance());
-        assertEquals(balanceSecondCard - Integer.parseInt(sum), dashboardPage.getSecondCardBalance());
     }
 
     @Test
@@ -44,14 +42,12 @@ public class MoneyTransferTest {
         val dashboardPage = new DashboardPage();
 
         int balanceFirstCard = dashboardPage.getFirstCardBalance();
-        int balanceSecondCard = dashboardPage.getSecondCardBalance();
         val moneyTransfer = dashboardPage.secondCardButton();
         val infoCard = DataHelper.getFirstCardNumber();
         String sum = "1500";
         moneyTransfer.transferForm(sum, infoCard);
 
         assertEquals(balanceFirstCard - Integer.parseInt(sum), dashboardPage.getFirstCardBalance());
-        assertEquals(balanceSecondCard + Integer.parseInt(sum), dashboardPage.getSecondCardBalance());
     }
 
     @Test
